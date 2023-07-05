@@ -3,13 +3,13 @@ package com.jmw.testcode.unit;
 import com.jmw.testcode.unit.beverage.Americano;
 import com.jmw.testcode.unit.beverage.Latte;
 import com.jmw.testcode.unit.order.Order;
-import org.apache.tomcat.util.http.fileupload.MultipartStream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 // 테스트는 문서다
 class CafeKioskTest {
@@ -63,7 +63,6 @@ class CafeKioskTest {
         cafeKiosk.clear();
         assertThat(cafeKiosk.getBeverageList()).hasSize(0);
     }
-
 
     @DisplayName("영업시작 시간 이전에는 주문을 생성 할 수 없다") // 도메인 용어(영업시간)을 사용하며 좀 더 자세한 정보를 제공
     @Test
