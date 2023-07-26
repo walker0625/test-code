@@ -1,6 +1,7 @@
 package com.jmw.testcode.spring.api.service;
 
 import com.jmw.testcode.spring.api.controller.request.OrderCreateRequest;
+import com.jmw.testcode.spring.api.service.order.request.OrderCreateServiceRequest;
 import com.jmw.testcode.spring.api.service.order.response.OrderResponse;
 import com.jmw.testcode.spring.domain.order.Order;
 import com.jmw.testcode.spring.domain.order.OrderRepository;
@@ -26,7 +27,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final StockRepository stockRepository;
 
-    public OrderResponse createOrder(OrderCreateRequest request, LocalDateTime registeredTime) {
+    public OrderResponse createOrder(OrderCreateServiceRequest request, LocalDateTime registeredTime) {
         List<String> productNumberList = request.getProductNumberList();
         List<Product> duplicateProducts = getDuplicateProducts(productNumberList);
 
