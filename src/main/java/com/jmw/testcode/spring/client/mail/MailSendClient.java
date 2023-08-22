@@ -15,4 +15,5 @@ public class MailSendClient {
 
         throw new IllegalArgumentException("메일 전송"); // 메일 전송으로 간주
     }
+
 }
